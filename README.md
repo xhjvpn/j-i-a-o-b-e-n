@@ -25,11 +25,13 @@
 
 1、有些KVM VPS仅提供较低的系统内核版本，如不能升级内核版本，建议DD到最新系统，可参考本[issues](https://github.com/YG-tsj/CFWarp-Pro/issues/11)，推荐ubuntu20、centos7、debain10以上。
 
-2、OpenVZ、LXC架构的VPS并不集成在此脚本中。
+2、不建议使用Docker，因为目前与WARP模式不兼容。
 
 3、内核必须5.6以上，脚本自带稳定版内核升级功能。
 
-#### OpenVZ、LXC架构VPS脚本:[EUserv 纯ipv6(OpenVZ、LXC架构VPS)WARP项目](https://github.com/YG-tsj/EUserv-warp)后续也将整合。
+4、OpenVZ、LXC架构的VPS并不集成在此脚本中。
+
+#### OpenVZ、LXC架构VPS脚本:[EUserv 纯ipv6(OpenVZ、LXC架构VPS)WARP项目](https://github.com/YG-tsj/EUserv-warp)。
 
 --------------------------------------------------------------------------------------------
 
@@ -174,9 +176,11 @@ wget -N --no-check-certificate https://cdn.jsdelivr.net/gh/YG-tsj/CFWarp-Pro/mul
 
 脚本13、结果表现为2个IP：VPS本地IPV6+WARP虚拟IPV4
 
-- **六、统一DNS功能（推荐有IPV4访问能力的VPS使用）：**
+- **六、统一DNS功能（推荐有IPV4访问能力的VPS使用，可选）：**
 
-VPS可能会强制初始化DNS设置，使WARP设置的DNS失效，导致进入SSH后无法访问外网，虽然说重启VPS能恢复WARP的DNS并能正常访问外网，但很不方便。
+VPS可能会强制初始化DNS设置，使WARP设置的DNS失效，导致进入SSH后无法访问外网（如无此问题则无需选择执行）
+
+虽然说重启VPS能恢复WARP的DNS并能正常访问外网，但很不方便。
 
 本功能会强制固定VPS的DNS为WARP设置的DNS，这样就不会出现SHH无法访问外网的问题。
 
@@ -248,7 +252,7 @@ phlinhng脚本地址：https://github.com/phlinhng/v2ray-tcp-tls-web
 
 outbounds部分：以上是代理脚本默认为IPV4优先设置模版。如果IPV6优先，则把4改成6，6改成4。只改三处（三个数字）！！
 
-routing部分：设置自由度太高啦！可参考IP、域名自定义德鸡IPV6教程：https://youtu.be/fY9HDLJ7mnM)
+routing部分：设置自由度太高啦！可参考IP、域名自定义德鸡IPV6教程：待发布
 
 ----------------------------------------------------------------------------------------------
 
