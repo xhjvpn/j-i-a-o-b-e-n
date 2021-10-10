@@ -1,0 +1,63 @@
+apt update -y 
+apt install -y curl
+apt install -y socat
+curl https://get.acme.sh | sh
+
+海得拉巴01
+~/.acme.sh/acme.sh --register-account -m 1@baocun.cc
+~/.acme.sh/acme.sh --issue -d 01yd.baocun.cc --standalone
+~/.acme.sh/acme.sh --installcert -d 01yd.baocun.cc --key-file /root/MS.key --fullchain-file /root/GS.crt
+
+海得拉巴02
+~/.acme.sh/acme.sh --register-account -m 1@baocun.cc
+~/.acme.sh/acme.sh --issue -d 02yd.baocun.cc --standalone
+~/.acme.sh/acme.sh --installcert -d 02yd.baocun.cc --key-file /root/MS.key --fullchain-file /root/GS.crt
+
+孟买01
+~/.acme.sh/acme.sh --register-account -m 1@baocun.cc
+~/.acme.sh/acme.sh --issue -d 03yd.baocun.cc --standalone
+~/.acme.sh/acme.sh --installcert -d 03yd.baocun.cc --key-file /root/MS.key --fullchain-file /root/GS.crt
+
+孟买02
+~/.acme.sh/acme.sh --register-account -m 1@baocun.cc
+~/.acme.sh/acme.sh --issue -d 04yd.baocun.cc --standalone
+~/.acme.sh/acme.sh --installcert -d 04yd.baocun.cc --key-file /root/MS.key --fullchain-file /root/GS.crt
+
+迪拜01
+~/.acme.sh/acme.sh --register-account -m 1@baocun.cc
+~/.acme.sh/acme.sh --issue -d 01db.baocun.cc --standalone
+~/.acme.sh/acme.sh --installcert -d 01db.baocun.cc --key-file /root/MS.key --fullchain-file /root/GS.crt
+
+迪拜02
+~/.acme.sh/acme.sh --register-account -m 1@baocun.cc
+~/.acme.sh/acme.sh --issue -d 02db.baocun.cc --standalone
+~/.acme.sh/acme.sh --installcert -d 02db.baocun.cc --key-file /root/MS.key --fullchain-file /root/GS.crt
+
+伦敦01
+~/.acme.sh/acme.sh --register-account -m 1@baocun.cc
+~/.acme.sh/acme.sh --issue -d 01ld.baocun.cc --standalone
+~/.acme.sh/acme.sh --installcert -d 01ld.baocun.cc --key-file /root/MS.key --fullchain-file /root/GS.crt
+
+伦敦02
+~/.acme.sh/acme.sh --register-account -m 1@baocun.cc
+~/.acme.sh/acme.sh --issue -d 02ld.baocun.cc --standalone
+~/.acme.sh/acme.sh --installcert -d 02ld.baocun.cc --key-file /root/MS.key --fullchain-file /root/GS.crt
+
+凤凰城01
+~/.acme.sh/acme.sh --register-account -m 1@baocun.cc
+~/.acme.sh/acme.sh --issue -d 01fhc.baocun.cc --standalone
+~/.acme.sh/acme.sh --installcert -d 01fhc.baocun.cc --key-file /root/MS.key --fullchain-file /root/GS.crt
+
+凤凰城02
+~/.acme.sh/acme.sh --register-account -m 1@baocun.cc
+~/.acme.sh/acme.sh --issue -d 02fhc.baocun.cc --standalone
+~/.acme.sh/acme.sh --installcert -d 02fhc.baocun.cc --key-file /root/MS.key --fullchain-file /root/GS.crt
+
+日本东京02
+~/.acme.sh/acme.sh --register-account -m 1@baocun.cc
+~/.acme.sh/acme.sh --issue -d 02dj.baocun.cc --standalone
+~/.acme.sh/acme.sh --installcert -d 02dj.baocun.cc --key-file /root/MS.key --fullchain-file /root/GS.crt
+
+
+
+bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
