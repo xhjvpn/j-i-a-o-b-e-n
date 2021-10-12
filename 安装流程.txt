@@ -1,0 +1,38 @@
+提权
+sudo -i
+
+
+root一键脚本
+bash <(curl -sSL https://cdn.jsdelivr.net/gh/wxhscc/j-i-a-o-b-e-n/root.sh)
+
+
+warp多功能一键脚本
+wget -N --no-check-certificate https://cdn.jsdelivr.net/gh/wxhscc/j-i-a-o-b-e-n/multi.sh && chmod +x multi.sh && ./multi.sh
+调用
+bash multi.sh
+
+卸载甲骨文云监控插件
+snap remove oracle-cloud-agent
+
+
+SSL证书
+apt update -y 
+
+apt install -y curl
+apt install -y socat
+curl https://get.acme.sh | sh
+~/.acme.sh/acme.sh --register-account -m 邮箱
+~/.acme.sh/acme.sh --issue -d 域名 --standalone
+~/.acme.sh/acme.sh --installcert -d 域名 --key-file /root/MS.key --fullchain-file /root/GS.crt
+
+
+安装X-UI
+bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
+
+
+
+安装探针监视端选8输入域名1+密匙（端口默认）
+curl -L https://raw.githubusercontent.com/naiba/nezha/master/script/install.sh -o nezha.sh && chmod +x nezha.sh
+./nezha.sh
+
+tz1.xxxxx.cc
