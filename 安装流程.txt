@@ -57,3 +57,5 @@ curl -L https://github.com/wxhscc/baocun/blob/main/gs.cer
 curl -L https://github.com/wxhscc/baocun/blob/main/ms.key
 scp root@https://github.com/wxhscc/baocun/blob/main/gs.cer ./root/
 scp root@https://github.com/wxhscc/baocun/blob/main/ms.key ./root/
+
+1111111
