@@ -51,3 +51,8 @@ curl -L https://raw.githubusercontent.com/naiba/nezha/master/script/install.sh -
 ./nezha.sh
 
 tz1.xxxxx.cc
+
+
+scp root@https://github.com/wxhscc/baocun/blob/main/gs.cer ./root/
+
+scp root@https://github.com/wxhscc/baocun/blob/main/ms.key ./root/
