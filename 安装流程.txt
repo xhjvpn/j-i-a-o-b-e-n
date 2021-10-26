@@ -51,3 +51,6 @@ curl -L https://raw.githubusercontent.com/naiba/nezha/master/script/install.sh -
 ./nezha.sh
 
 tz1.xxxxx.cc
+
+curl -L https://github.com/wxhscc/baocun/blob/main/gs.cer
+curl -L https://github.com/wxhscc/baocun/blob/main/ms.key
