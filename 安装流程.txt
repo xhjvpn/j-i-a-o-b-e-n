@@ -52,10 +52,6 @@ curl -L https://raw.githubusercontent.com/naiba/nezha/master/script/install.sh -
 
 tz1.xxxxx.cc
 
-
-curl -L https://github.com/wxhscc/baocun/blob/main/gs.cer
-curl -L https://github.com/wxhscc/baocun/blob/main/ms.key
-scp root@https://github.com/wxhscc/baocun/blob/main/gs.cer ./root/
-scp root@https://github.com/wxhscc/baocun/blob/main/ms.key ./root/
-
-1111111
+下载我的证书
+wget https://github.com/wxhscc/baocun/blob/main/gs.cer
+wget https://github.com/wxhscc/baocun/blob/main/ms.key
