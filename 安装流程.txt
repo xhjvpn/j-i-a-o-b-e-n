@@ -15,7 +15,7 @@ sudo -i
 
 
 端口全开
-bash <(curl -sSL https://cdn.jsdelivr.net/gh/wxhscc/j-i-a-o-b-e-n/zvp.sh)
+bash <(curl -sSL https://cdn.jsdelivr.net/gh/wxhscc/j-i-a-o-b-e-n/zvp1.sh)
 
 root一键脚本
 bash <(curl -sSL https://cdn.jsdelivr.net/gh/wxhscc/j-i-a-o-b-e-n/root.sh)
