@@ -58,3 +58,7 @@ tz1.xxxxx.cc
 下载我的证书
 wget https://github.com/wxhscc/baocun/blob/main/gs.cer
 wget https://github.com/wxhscc/baocun/blob/main/ms.key
+
+小鸡探针
+curl -L https://raw.githubusercontent.com/naiba/nezha/master/script/install.sh -o nezha.sh && chmod +x nezha.sh
+./nezha.sh
