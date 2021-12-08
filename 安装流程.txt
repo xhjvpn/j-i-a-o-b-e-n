@@ -13,6 +13,14 @@
 提权
 sudo -i
 
+下面所有脚本请自行安装Curl、Wget等
+
+yum -y install wget    #ContOS 安装 wget
+yum -y install curl    #ContOS 安装 curl
+
+apt-get install wget   #Debian Ubuntu 安装 wget
+apt-get install curl   #Debian Ubuntu 安装 crul
+
 
 端口全开
 bash <(curl -sSL https://cdn.jsdelivr.net/gh/wxhscc/j-i-a-o-b-e-n/zvp1.sh)
