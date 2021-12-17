@@ -79,3 +79,11 @@ bash <(wget --no-check-certificate -qO- 'https://raw.githubusercontent.com/MoeCl
 
 一键DD系统多选择（需要VNC加持）
 wget -N --no-check-certificate https://raw.githubusercontent.com/veip007/dd/master/dd-od.sh && chmod +x dd-od.sh && ./dd-od.sh
+
+
+
+
+剑皇
+wget https://github.com/maintell/webBenchmark/releases/download/0.1/webBenchmark_linux_x64
+chmod +x webBenchmark_linux_x64
+./webBenchmark_linux_x64 -c 32 -s https://target.url
