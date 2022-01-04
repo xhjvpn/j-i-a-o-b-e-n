@@ -48,6 +48,9 @@ curl https://get.acme.sh | sh
 ~/.acme.sh/acme.sh --issue -d 域名 --standalone
 ~/.acme.sh/acme.sh --installcert -d 域名 --key-file /root/MS.key --fullchain-file /root/GS.crt
 
+证书续期命令：
+crontab -l
+
 
 
 安装X-UI
