@@ -85,6 +85,10 @@ wget -N --no-check-certificate https://raw.githubusercontent.com/veip007/dd/mast
 
 
 
+wget https://raw.githubusercontent.com/FunctionClub/Fail2ban/master/fail2ban.sh && bash fail2ban.sh 2>&1 | tee fail2ban.log
+端口：22
+次数：3
+时间：48
 
 剑皇
 wget https://github.com/maintell/webBenchmark/releases/download/0.1/webBenchmark_linux_x64
