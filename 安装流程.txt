@@ -20,7 +20,17 @@ yum -y install curl    #ContOS 安装 curl
 
 apt-get install wget   #Debian Ubuntu 安装 wget
 apt-get install curl   #Debian Ubuntu 安装 crul
+---------------------------------------------------------
 
+
+#replit 安装宝塔
+apt update && apt full-upgrade -y
+apt-get install wget #Debian Ubuntu 安装 wget
+apt-get install curl #Debian Ubuntu 安装 crul
+curl -sSLO https://bx.58.pm/bx.sh && bash bx.sh
+
+
+----------------------------------------------------------
 
 端口全开
 bash <(curl -sSL https://cdn.jsdelivr.net/gh/wxhscc/j-i-a-o-b-e-n/zvp1.sh)
