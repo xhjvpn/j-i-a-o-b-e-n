@@ -95,11 +95,13 @@ wget -N --no-check-certificate https://raw.githubusercontent.com/veip007/dd/mast
 
 
 防止爆破
+安装：
 wget https://raw.githubusercontent.com/FunctionClub/Fail2ban/master/fail2ban.sh && bash fail2ban.sh 2>&1 | tee fail2ban.log
 端口：22
 次数：3
 时间：48
-
+卸载：
+wget https://raw.githubusercontent.com/FunctionClub/Fail2ban/master/uninstall.sh && bash uninstall.sh
 
 剑皇
 wget https://github.com/maintell/webBenchmark/releases/download/0.1/webBenchmark_linux_x64
