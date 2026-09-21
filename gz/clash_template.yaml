@@ -1,0 +1,25 @@
+port: 7890
+socks-port: 7891
+allow-lan: false
+mode: rule
+log-level: silent
+proxies:
+{{PROXIES}}
+proxy-groups:
+  - name: "节点选择"
+    type: select
+    proxies:
+      - "自动优选"
+{{TAGS}}
+      - DIRECT
+  - name: "自动优选"
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    proxies:
+{{TAGS}}
+rules:
+  - GEOIP,LAN,DIRECT,no-resolve
+  - GEOIP,CN,DIRECT,no-resolve
+  - MATCH,节点选择
