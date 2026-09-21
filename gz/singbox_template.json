@@ -1,0 +1,51 @@
+{
+  "log": { "disabled": false, "level": "info", "timestamp": true },
+  "dns": {
+    "servers": [
+      { "tag": "proxydns", "type": "tls", "server": "8.8.8.8", "detour": "select" },
+      { "tag": "localdns", "type": "local", "detour": "direct" },
+      { "tag": "dns_fakeip", "type": "fakeip", "inet4_range": "198.18.0.0/15", "inet6_range": "fc00::/18" }
+    ],
+    "rules": [
+      { "outbound": "any", "server": "localdns", "disable_cache": true },
+      { "clash_mode": "Global", "server": "proxydns" },
+      { "clash_mode": "Direct", "server": "localdns" },
+      { "rule_set": "geosite-cn", "server": "localdns" },
+      { "rule_set": "geosite-geolocation-!cn", "server": "proxydns" },
+      { "rule_set": "geosite-geolocation-!cn", "query_type": ["A", "AAAA"], "server": "dns_fakeip" }
+    ],
+    "final": "proxydns"
+  },
+  "inbounds": [{
+    "type": "tun", "tag": "tun-in",
+    "address": ["172.19.0.1/30", "fd00::1/126"],
+    "auto_route": true, "strict_route": true
+  }],
+  "outbounds": [
+    { "tag": "select", "type": "selector", "default": "auto", "outbounds": ["auto", "__TAGS_PLACEHOLDER__"] },
+    "__OUTBOUNDS_PLACEHOLDER__",
+    { "tag": "direct", "type": "direct" },
+    { "tag": "auto", "type": "urltest", "outbounds": ["__TAGS_PLACEHOLDER__"], "url": "https://www.gstatic.com/generate_204", "interval": "1m", "tolerance": 50, "interrupt_exist_connections": false }
+  ],
+  "route": {
+    "rule_set": [
+      { "tag": "geosite-geolocation-!cn", "type": "remote", "format": "binary", "url": "https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/geolocation-!cn.srs", "download_detour": "select", "update_interval": "1d" },
+      { "tag": "geosite-cn", "type": "remote", "format": "binary", "url": "https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/geolocation-cn.srs", "download_detour": "select", "update_interval": "1d" },
+      { "tag": "geoip-cn", "type": "remote", "format": "binary", "url": "https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/cn.srs", "download_detour": "select", "update_interval": "1d" }
+    ],
+    "auto_detect_interface": true, "final": "select",
+    "rules": [
+      { "inbound": "tun-in", "action": "sniff" },
+      { "inbound": "tun-in", "action": "resolve", "strategy": "prefer_ipv4" },
+      { "protocol": "dns", "action": "hijack-dns" },
+      { "port": 443, "network": "udp", "action": "reject" },
+      { "clash_mode": "Direct", "outbound": "direct" },
+      { "clash_mode": "Global", "outbound": "select" },
+      { "rule_set": "geoip-cn", "outbound": "direct" },
+      { "rule_set": "geosite-cn", "outbound": "direct" },
+      { "ip_is_private": true, "outbound": "direct" },
+      { "rule_set": "geosite-geolocation-!cn", "outbound": "select" }
+    ]
+  },
+  "ntp": { "enabled": true, "server": "time.apple.com", "server_port": 123, "interval": "30m", "detour": "direct" }
+}
